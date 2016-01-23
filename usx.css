@@ -1,0 +1,51 @@
+/* CSS Document for usx */
+chapter { string-set: chap attr(number);}
+
+@page {
+    @footnotes {
+	border-top: solid black thin;
+	padding-top: 8pt
+    }
+    @top-center {
+	content: string(header) ' ' string(chap, first);
+    }
+    @top-right { 
+        content: counter(page);
+    }
+    @bottom-center { content: 'Used with Permission © 2000 Wycliffe Bible Translators Inc.'; color:silver}
+}
+
+book {    visibility: hidden; page-break-before:always }
+note[style="f"] {     display: prince-footnote;    counter-increment: footnote   ;   font-size: 70%;margin-left:2em;list-style-type: lower-alpha}
+para[style="toc1"] {    visibility: hidden;  }
+para[style="toc2"] {    visibility: hidden;  }
+para[style="toc3"] {    visibility: hidden;  }
+para[style="h"] {    visibility: hidden; string-set: header content() }
+para[style="mt1"] {  font-weight: 800;  font-size: 18pt; display: block; margin-bottom: 6pt; line-height: 1.4em; margin-top: 6pt; text-align:center ;page-break-after: avoid}
+para[style="mt2"] {  font-weight: 800;  font-size: 14pt; display: block; margin-bottom: 6pt; line-height: 1.4em; margin-top: 6pt; text-align:center ;page-break-after: avoid}
+para[style="s"] {  font-weight: 800;  margin-bottom: 2pt; margin-top: 4pt; text-align:center ; page-break-after: avoid}
+para[style="r"] {  margin-bottom: 2pt;  margin-top: 2pt; text-align:center ; page-break-after: avoid}
+para[style="p"] { margin-bottom: 6pt; ; }
+para[style="ip"] { margin-bottom: 6pt; }
+para[style="q1"] { margin-bottom: 2pt; margin-left:2em; text-indent:-1em}
+para[style="q2"] { margin-bottom: 2pt; margin-left:3em; text-indent:-1em}
+para[style="q3"] { margin-bottom: 2pt; margin-left:4em; text-indent:-1em}
+para {display:block}
+/* verse:before {content:content(number)}
+verse[number] {string-set: number, content()}  */
+note[style="f"]::footnote-call {
+    content: counter(footnote,lower-alpha);
+    font-size: 90%;
+    vertical-align: super;
+    line-height: none ;
+}
+note[style="f"]::footnote-marker {
+    list-style: lower-alpha;
+}
+
+
+
+/*chapter { counter-reset: footnote-count; }  this causes versnumbers to all be 1 */
+verse[number="1"]:before {content: string(chap) ; 	font-size: 34pt; font-weight: 800;float:left;position:relative;margin-top:-5.5pt; margin-right:2pt; margin-bottom: -8pt; counter-reset: footnote}
+
+verse[number]:after {content: attr(number); font-size: 60%;     vertical-align: super;}
