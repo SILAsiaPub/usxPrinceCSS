@@ -1,19 +1,7 @@
 /* CSS Document for usx */
 chapter { string-set: chap attr(number);}
 
-@page {
-    @footnotes {
-	border-top: solid black thin;
-	padding-top: 8pt
-    }
-    @top-center {
-	content: string(header) ' ' string(chap, first);
-    }
-    @top-right { 
-        content: counter(page);
-    }
-    @bottom-center { content: 'Used with Permission © 2000 Wycliffe Bible Translators Inc.'; color:silver}
-}
+
 
 book {    visibility: hidden; page-break-before:always }
 note[style="f"] {     display: prince-footnote;    counter-increment: footnote   ;   font-size: 70%;margin-left:2em;list-style-type: lower-alpha}
@@ -49,3 +37,17 @@ note[style="f"]::footnote-marker {
 verse[number="1"]:before {content: string(chap) ; 	font-size: 34pt; font-weight: 800;float:left;position:relative;margin-top:-5.5pt; margin-right:2pt; margin-bottom: -8pt; counter-reset: footnote}
 
 verse[number]:after {content: attr(number); font-size: 60%;     vertical-align: super;}
+@page {
+    @footnotes {
+	border-top: solid black thin;
+	padding-top: 8pt
+    text-indent:0em
+    }
+    @top-center {
+	content: string(header) ' ' string(chap, first);
+    }
+    @top-right { 
+        content: counter(page);
+    }
+    @bottom-center { content: 'Used with Permission © 2000 Wycliffe Bible Translators Inc.'; color:silver}
+}
