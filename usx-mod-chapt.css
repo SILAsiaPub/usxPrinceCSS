@@ -1,52 +1,8 @@
 /* CSS Document for usx */
 usx {font-family: 'Arial Unicode MS'; font-size: 10pt }
 
-
+/* pagination */
 book { display: none; page-break-before:always }
-para[style="ide"] {    display: none;  }
-para[style="toc1"] {    display: none;  }
-para[style="toc2"] {    display: none;  }
-para[style="toc3"] {    display: none;  }
-para[style="rem"] {    display: none;  }
-para[style="h"] {    font-size: 0pt;string-set: header content() }
-para[style="mt1"] {  font-weight: 800;  font-size: 18pt; display: block; margin-bottom: 6pt; line-height: 1.4em; margin-top: 6pt; text-align:center ;page-break-after: avoid}
-para[style="mt2"] {  font-weight: 800; font-style: italic; font-size: 14pt; display: block; margin-bottom: 6pt; line-height: 1.4em; margin-top: 6pt; text-align:center ;page-break-after: avoid}
-para[style="imt1"] {  font-weight: 800;  font-size: 14pt; display: block; margin-bottom: 6pt; line-height: 1.4em; margin-top: 6pt; text-align:center ;page-break-after: avoid}
-para[style="imt2"] {  font-weight: 800;  font-size: 11pt; display: block; margin-bottom: 6pt; line-height: 1.4em; margin-top: 6pt; text-align:center ;page-break-after: avoid}
-para[style="iot"] {  font-weight: 800;  font-size: 11pt; display: block; margin-bottom: 6pt; line-height: 1.4em; margin-top: 6pt; text-align:center ;page-break-after: avoid}
-para[style="s"] {  font-weight: 800;  margin-bottom: 2pt; margin-top: 4pt; text-align:center ; page-break-after: avoid}
-para[style="s1"] {  font-weight: 800;  margin-bottom: 2pt; margin-top: 4pt; text-align:center ; page-break-after: avoid}
-para[style="s2"] {  font-weight: 800;  margin-bottom: 2pt; margin-top: 4pt; text-align:center ;font-size: 96%; page-break-after: avoid}
-para[style="r"] {  margin-bottom: 2pt;  margin-top: 2pt; text-align:center ;font-style:italic; page-break-after: avoid}
-para[style="p"] { margin-bottom: 6pt; line-height: ; }
-para[style="ip"] { margin-bottom: 6pt; }
-para[style="io1"] { margin-bottom: 6pt; margin-left: 2em}
-para[style="q1"] { margin-bottom: 2pt; margin-left:2em; text-indent:-1em}
-para[style="q2"] { margin-bottom: 2pt; margin-left:3em; text-indent:-1em}
-para[style="q3"] { margin-bottom: 2pt; margin-left:4em; text-indent:-1em}
-para {display:block}
-/* verse:before {content:content(number)}
-verse[number] {string-set: number, content()}  */
-note[style="f"] {     display: prince-footnote;    counter-increment: footnote   ;   font-size: 70%; margin-left:2em; text-align: left; font-weight: normal;    text-indent:0em;}
-note[style="f"]::footnote-call {
-    content: counter(footnote, lower-alpha );
-    font-size: 90%;
-    vertical-align: super;
-    line-height: none ;
-}
-note[style="f"]::footnote-marker {
-    content: counter(footnote, lower-alpha ) " ";
-    font-size: 90%;
-    vertical-align: super;
-    line-height: none ;
-    margin-right:.5em;
-
-}
-
-/* chapter { counter-reset: footnote-count; }  this causes versnumbers to all be 1 */
-verse[number="1"]:before, verse[number="1-7"]:before {content: string(chapter) ; 	font-size: 220%; font-weight: 800;float:left; margin-right:2pt; margin-bottom: -8pt; counter-reset: footnote}
-
-verse:after {content: attr(number); font-size: 60%; position:relative; top:-3pt ;}
 @page {
     size: a5;
     font-family: 'Arial Unicode MS';
@@ -73,6 +29,51 @@ verse:after {content: attr(number); font-size: 60%; position:relative; top:-3pt 
     @top { content: normal }
     @top-right { content: normal }
 }
+
+/* do not display */
+para[style="ide"] {    display: none;  }
+para[style="toc1"] {    display: none;  }
+para[style="toc2"] {    display: none;  }
+para[style="toc3"] {    display: none;  }
+para[style="rem"] {    display: none;  }
+/* paragraph formatting */
+para[style="h"] {    font-size: 0pt;string-set: header content() }
+para[style="mt1"] {  font-weight: 800;  font-size: 18pt; display: block; margin-bottom: 6pt; line-height: 1.4em; margin-top: 6pt; text-align:center ;page-break-after: avoid}
+para[style="mt2"] {  font-weight: 800; font-style: italic; font-size: 14pt; display: block; margin-bottom: 6pt; line-height: 1.4em; margin-top: 6pt; text-align:center ;page-break-after: avoid}
+para[style="imt1"] {  font-weight: 800;  font-size: 14pt; display: block; margin-bottom: 6pt; line-height: 1.4em; margin-top: 6pt; text-align:center ;page-break-after: avoid}
+para[style="imt2"] {  font-weight: 800;  font-size: 11pt; display: block; margin-bottom: 6pt; line-height: 1.4em; margin-top: 6pt; text-align:center ;page-break-after: avoid}
+para[style="iot"] {  font-weight: 800;  font-size: 11pt; display: block; margin-bottom: 6pt; line-height: 1.4em; margin-top: 6pt; text-align:center ;page-break-after: avoid}
+para[style="s"] {  font-weight: 800;  margin-bottom: 2pt; margin-top: 4pt; text-align:center ; page-break-after: avoid}
+para[style="s1"] {  font-weight: 800;  margin-bottom: 2pt; margin-top: 4pt; text-align:center ; page-break-after: avoid}
+para[style="s2"] {  font-weight: 800;  margin-bottom: 2pt; margin-top: 4pt; text-align:center ;font-size: 96%; page-break-after: avoid}
+para[style="r"] {  margin-bottom: 2pt;  margin-top: 2pt; text-align:center ;font-style:italic; page-break-after: avoid}
+para[style="p"] { margin-bottom: 6pt; line-height: ; }
+para[style="ip"] { margin-bottom: 6pt; }
+para[style="io1"] { margin-bottom: 6pt; margin-left: 2em}
+para[style="q1"] { margin-bottom: 2pt; margin-left:2em; text-indent:-1em}
+para[style="q2"] { margin-bottom: 2pt; margin-left:3em; text-indent:-1em}
+para[style="q3"] { margin-bottom: 2pt; margin-left:4em; text-indent:-1em}
+para {display:block}
+/* footnote handlng  */
+note[style="f"] {     display: prince-footnote;    counter-increment: footnote   ;   font-size: 70%; margin-left:2em; text-align: left; font-weight: normal;    text-indent:0em;}
+note[style="f"]::footnote-call {
+    content: counter(footnote, lower-alpha );
+    font-size: 90%;
+    vertical-align: super;
+    line-height: none ;
+}
+note[style="f"]::footnote-marker {
+    content: counter(footnote, lower-alpha ) " ";
+    font-size: 90%;
+    vertical-align: super;
+    line-height: none ;
+    margin-right:.5em;
+}
+
+/* header, chapter and verse numbers */
+verse[number="1"]:before, verse[number="1-7"]:before {content: string(chapter) ; 	font-size: 220%; font-weight: 800;float:left; margin-right:2pt; margin-bottom: -8pt; counter-reset: footnote}
+
+verse:after {content: attr(number); font-size: 60%; position:relative; top:-3pt ;}
 para[style="h"] {string-set: header content() ' '}
 
-chapter { font-size: 0pt; string-set: chapter attr(number); }
+chapter { font-size: 0pt; string-set: chapter content(); }
