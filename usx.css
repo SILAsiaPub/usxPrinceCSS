@@ -75,4 +75,5 @@ verse:after {content: attr(number); font-size: 60%; position:relative; top:-3pt 
 }
 para[style="h"] {string-set: header content() ' '}
 
-chapter { font-size: 0pt; string-set: chapter attr(number); }
+chapter { font-size: 0pt; string-set: chapter content(); }
+/* chapter { font-size: 0pt; string-set: chapter attr(number); } */
