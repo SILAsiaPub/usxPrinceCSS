@@ -67,7 +67,6 @@ verse:after {content: attr(number); font-size: 60%; position:relative; top:-3pt 
     @top-left { 
         content: normal;
     }
-    @bottom-center { content: 'Used with Permission © 2000 Wycliffe Bible Translators Inc.'; color:silver; font-size:70%}
 }   
 @page:first {
     @top { content: normal }
