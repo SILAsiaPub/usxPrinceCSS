@@ -1,0 +1,238 @@
+/* CSS Document for usx */
+usx {
+  font-family: 'Charis SIL';
+  font-size: 10pt;
+  column-count: 1 ;
+  column-fill:balance; 
+}
+
+book { display: none;
+  page-break-before:always ;
+}
+para {display:block}
+/* Introduction para */
+para[style="ide"] {    display: none;  }
+para[style="toc1"] {    display: none;  }
+para[style="toc2"] {    display: none;  }
+para[style="toc3"] {    display: none;  }
+para[style="rem"] {    display: none;  }
+para[style="h"] {    font-size: 0pt;
+  string-set: header content() }
+para[style="mt1"], para[style="mt"] {
+  column-count: 1;
+  column-span:all;
+  font-weight: 800;
+  font-size: 18pt;
+  display: block;
+  margin-bottom: 6pt;
+  line-height: 1.4em;
+  margin-top: 6pt;
+  text-align:center ;
+  page-break-before:always;
+  page-break-after: avoid
+}
+para[style="mt2"] {
+  column-count: 1;
+  column-span:all; 
+  font-weight: 800; 
+  font-style: italic;
+  font-size: 14pt;
+  display: block;
+  margin-bottom: 6pt;
+  line-height: 1.4em;
+  margin-top: 6pt;
+  text-align:center ;
+  page-break-after: avoid}
+para[style="imt1"], para[style="imt"] { 
+  column-count: 1;
+  column-span:all;
+  font-weight: 800;
+  font-size: 14pt;
+  display: block;
+  margin-bottom: 6pt;
+  line-height: 1.4em;
+  margin-top: 6pt;
+  text-align:center ;
+  page-break-after: avoid}
+para[style="imt2"] {
+  column-count: 1;
+  column-span:all;
+  font-weight: 800;
+  font-size: 11pt;
+  display: block;
+  margin-bottom: 6pt;
+  line-height: 1.4em;
+  margin-top: 6pt;
+  text-align:center ;
+  page-break-after: avoid}
+para[style="iot"] {
+  column-count: 1;
+  column-span:all;
+  font-weight: 800;
+  font-size: 11pt;
+  display: block;
+  margin-bottom: 6pt;
+  line-height: 1.4em;
+  margin-top: 6pt;
+  text-align:center ;
+  page-break-after: avoid}
+para[style="io1"], para[style="io"] {
+  column-count: 1;
+  column-span:all;
+  display: block;
+  margin-left:1em;
+  margin-bottom: 2pt;
+  line-height: 1.4em;
+  margin-top: 2pt;
+  page-break-after: avoid}
+para[style="ip"] {
+  column-count: 1;
+  column-span:all;
+  margin-bottom: 6pt; 
+  }
+para[style="ib"] {
+  column-count: 1;
+  column-span:all;
+  margin-bottom: 6pt; 
+  }
+  /* main body para */
+para[style="s1"], para[style="s"] {
+  font-weight: 800;
+  margin-bottom: 2pt;
+  margin-top: 4pt;
+  text-align:center ;
+  page-break-after: avoid}
+para[style="s2"] {
+  font-weight: 800;
+  margin-bottom: 2pt;
+  margin-top: 4pt;
+  text-align:center ;
+  font-size: 96%;
+  page-break-after: avoid}
+para[style="r"] {
+  margin-bottom: 2pt;
+  margin-top: 2pt;
+  text-align:center ;
+  font-style:italic;
+  page-break-after: avoid}
+para[style="sr"] {
+  margin-bottom: 2pt;
+  margin-top: 2pt;
+  text-align:center ;
+  page-break-after: avoid}
+para[style="p"] {
+  margin-bottom: 6pt;
+  line-height: ; }
+para[style="q1"] {
+  margin-bottom: 2pt;
+  margin-left:2em;
+  text-indent:-1em}
+para[style="q2"] {
+  margin-bottom: 2pt;
+  margin-left:3em;
+  text-indent:-1em}
+para[style="q3"] {
+  margin-bottom: 2pt;
+  margin-left:4em;
+  text-indent:-1em}
+/* verse:before {content:content(number)}
+verse[number] {string-set: number, content()}  */
+note[style="f"] {
+  display: prince-footnote;
+  counter-increment: footnote   ;
+  font-size: 70%;
+  margin-left:2em;
+  text-align: left;
+  font-weight: normal;
+  text-indent:0em;}
+note[style="f"]::footnote-call {
+content: counter(footnote, lower-alpha );
+font-size: 90%;
+vertical-align: super;
+line-height: none ;
+}
+note[style="f"]::footnote-marker {
+content: counter(footnote, lower-alpha ) " ";
+font-size: 90%;
+vertical-align: super;
+line-height: none ;
+margin-right:.5em;
+
+}
+
+/* chapter { counter-reset: footnote-count; }  this causes versnumbers to all be 1 */
+verse[number="1"]:before,
+verse[number="1-7"]:before,
+verse[number="1-6"]:before,
+verse[number="1-5"]:before,
+verse[number="1-4"]:before,
+verse[number="1-3"]:before,
+verse[number="1-2"]:before 
+  {
+  content: string(chapter) ;
+  font-size: 220%;
+  font-weight: 800;
+  float:left;
+  margin-right:2pt;
+  margin-bottom: -8pt;
+  counter-reset: footnote
+  }
+
+verse:after {content: attr(number);
+  font-size: 60%;
+  position:relative;
+  top:-3pt ;}
+  
+/* =============================== Figures CSS ===============================*/
+figure {display:block;text-align:center; font-size: 70%; font-style:italic;page-break-inside: avoid;break-inside: avoid;}
+figure:before {display:block; width:99%;content:  attr("file", url) ;column-break-after:avoid;}
+figure[size=col] { width:100%;margin:4pt 0 6pt 0;}
+/* figure[loc=b] {width:100%;float:prince-column-bottom-if-necessary} */
+/* figure[loc=b] {width:100%;float:prince-column-bottom} */
+/* figure[loc=b] {width:100%;float:bottom } */
+/* figure[loc=t] {width:100%;float:prince-column-top-if-necessary}
+/* figure[loc=t] {width:100%;float:prince-column-top} */
+figure[loc=newpage] {page-break-before:always;}
+figure[size=page] {column-span:all;width:100%;}
+figure[size=right-half] {width:47%;margin:4pt 0 6pt 6pt;float:right}
+figure[size=left-half] {width:47%;margin:4pt 6pt 6pt 0;float:left}
+/* The following selects a specific figure */
+/* figure[file='co00951c.jpg']{width:50%;margin:4pt 6pt 6pt 0;float:left; }
+/* ======================== End Figures CSS ==================================*/
+
+para[style="h"] {string-set: header content() ' '}
+
+chapter {
+  font-size: 0pt;
+  string-set: chapter attr(number); }
+
+@page {
+  size: a5;
+  font-family: 'Arial Unicode MS';
+  font-size: 10pt;
+  @footnotes {
+  content: counter(footnote,lower-alpha) ;
+  border-top: solid black thin;
+  margin-top: 8pt ;
+  text-indent:0em ;
+}
+@top-center {
+content: string(header) ' ' string(chapter, last);
+}
+@top-right {
+  content: counter(page);
+}
+@top-left {
+  content: normal;
+}
+}
+@page:first {
+  @top {
+    content: normal }
+  @top-right {
+    content: normal }
+}
+
+/* chapter {
+  font-size: 0pt;
+  string-set: chapter attr(number); } */
