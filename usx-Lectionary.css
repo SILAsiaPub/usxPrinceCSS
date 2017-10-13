@@ -1,0 +1,92 @@
+/* CSS Document for usx 
+--- Page formatting ---*/
+@page {
+    size: a4;
+    font-family: 'Charis SIL';
+    font-size: 10pt; 
+
+
+}   
+@page:left {
+    @top-left { content: counter(page) ;}
+    @top { content: string(header) ;}
+    margin-left: 2cm;
+    margin-right: 3cm;
+}
+@page:right {
+    @top-right { content: counter(page); }
+    @top { content: string(header) ;}
+    margin-left: 3cm;
+    margin-right: 2cm;
+}
+@page:first {
+    @top { content: normal }
+    @top-right { content: normal ;}
+}
+para.ms1 { string-set: header content(); }
+
+@page  chapter:first {
+    @top { content: none ;}
+}
+chapter { page: chapter ;  prince-page-group: start; page-break-before:always; }
+
+
+/* Titlepage */
+chapter.id para.b {height:40pt}
+para.mt1 {  font-weight: 800;  font-size: 32pt; display: block; margin-bottom: 6pt; line-height: 1.4em; margin-top: 6pt; text-align:center ;page-break-after: avoid}
+para.mt2 {  font-weight: 800; font-style: italic; font-size: 28pt; display: block; margin-bottom: 6pt; line-height: 1.4em; margin-top: 6pt; text-align:center ;page-break-after: avoid}
+
+div.dbeg {column-count: 2 ;column-width: 47%}
+
+char.rq {float:right}
+
+para {display:block}
+para.ide {    display: none;  }
+para.toc1 {    display: none;  }
+para.toc2 {    display: none;  }
+para.toc3 {    display: none;  }
+para.rem {    display: none;  }
+chapter {    display: none;  }
+
+para.imt1 {  font-weight: 800;  font-size: 14pt; display: block; margin-bottom: 6pt; line-height: 1.4em; margin-top: 6pt; text-align:center ;page-break-after: avoid}
+para.imt2 {  font-weight: 800;  font-size: 11pt; display: block; margin-bottom: 6pt; line-height: 1.4em; margin-top: 6pt; text-align:center ;page-break-after: avoid}
+para.iot {  font-weight: 800;  font-size: 11pt; display: block; margin-bottom: 6pt; line-height: 1.4em; margin-top: 6pt; text-align:center ;page-break-after: avoid}
+para.ms1 { font-size: 14pt; font-weight: 800;  margin-bottom: 2pt; margin-top: 4pt; text-align:center ; page-break-before: always}
+para.ms { font-size: 12pt; font-weight: 800;  margin-bottom: 2pt; margin-top: 4pt; text-align:left ; page-break-after: avoid}
+para.s {  font-weight: 800;  margin-bottom: 2pt; margin-top: 4pt; text-align:center ; page-break-after: avoid}
+para.s1 {  font-weight: 800;  margin-bottom: 2pt; margin-top: 4pt; text-align:center ; page-break-after: avoid}
+para.s2 {  font-weight: 800;  margin-bottom: 2pt; margin-top: 4pt; text-align:center ;font-size: 96%; page-break-after: avoid}
+para.r {  margin-bottom: 2pt;  margin-top: 2pt; text-align:center ;font-style:italic; page-break-after: avoid}
+para.p { margin-bottom: 6pt;  }
+para.ip { margin-bottom: 6pt; }
+para.io1 { margin-bottom: 6pt; margin-left: 2em}
+para.q1 { margin-bottom: 2pt; margin-left:2em; text-indent:-1em}
+para.q2 { margin-bottom: 2pt; margin-left:3em; text-indent:-1em}
+para.q3 { margin-bottom: 2pt; margin-left:4em; text-indent:-1em}
+
+/* verse:before {content:content(number)}
+verse[number] {string-set: number, content()}  */
+note.f {     display: prince-footnote;    counter-increment: footnote   ;   font-size: 70%; margin-left:2em; text-align: left; font-weight: normal;    text-indent:0em;}
+note.f::footnote-call {
+    content: counter(footnote, lower-alpha );
+    font-size: 90%;
+    vertical-align: super;
+    line-height: none ;
+}
+note.f::footnote-marker {
+    content: counter(footnote, lower-alpha ) " ";
+    font-size: 90%;
+    vertical-align: super;
+    line-height: none ;
+    margin-right:.5em;
+
+}
+
+/* chapter { counter-reset: footnote-count; }  this causes versnumbers to all be 1 */
+verse[number="1"]:before, verse[number="1-7"]:before {content: string(chapter) ; 	font-size: 220%; font-weight: 800;float:left; margin-right:2pt; margin-bottom: -8pt; counter-reset: footnote}
+
+verse:after {content: attr(number); font-size: 60%; position:relative; top:-3pt ;}
+
+
+/* chapter { font-size: 0pt; string-set: chapter content(); }
+chapter { font-size: 0pt; string-set: chapter attr(number); } */
