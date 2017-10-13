@@ -2,9 +2,11 @@
 
 CSS to create PDF via PrinceXML directly from a USX file or files.
 
-This is an initial attempt to creata a CSS to use in Prince to create a PDF directly from a USX exported from Paratext. Other options to create a PDF require the SFM to be USFM compliant. This method means that the compliance is not needed to get a result. That is not always a good thing but may same some a lot of frustration. It may even help find the problem.
+This is an initial attempt to creata a CSS to use in Prince to create a PDF directly from a USX exported from Paratext. Other options to create a PDF require the SFM to be USFM compliant. This method means that the compliance is not needed to get a result. That is not always a good thing but may save some people a lot of frustration. It may even help find the problem.
 
 Not all USFM is in the CSS yet.
+
+Note the PrincXML symbol on the first page of the PDF does not print.
 
 Featurse:
 * Handles figures
