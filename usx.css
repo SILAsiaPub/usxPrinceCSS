@@ -17,7 +17,7 @@ para[style="toc2"] {    display: none;  }
 para[style="toc3"] {    display: none;  }
 para[style="rem"] {    display: none;  }
 para[style="h"] {    font-size: 0pt;
-  string-set: header content() }
+  string-set: header content() ;}
 para[style="mt1"], para[style="mt"] {
   column-count: 1;
   column-span:all;
@@ -122,7 +122,7 @@ para[style="sr"] {
   page-break-after: avoid}
 para[style="p"] {
   margin-bottom: 6pt;
-  line-height: ; }
+  line-height: 110% ; }
 para[style="q1"] {
   margin-bottom: 2pt;
   margin-left:2em;
@@ -225,7 +225,7 @@ content: string(header) ' ' string(chapter, last);
 @top-left {
   content: normal;
 }
-}
+
 @page:first {
   @top {
     content: normal }
