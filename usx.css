@@ -1,7 +1,5 @@
 /* CSS Document for usx */
 usx {
-  font-family: 'Charis SIL';
-  font-size: 10pt;
   column-count: 1 ;
   column-fill:balance; 
 }
@@ -185,7 +183,7 @@ verse:after {content: attr(number);
   
 /* =============================== Figures CSS ===============================*/
 figure {display:block;text-align:center; font-size: 70%; font-style:italic;page-break-inside: avoid;break-inside: avoid;}
-figure:before {display:block; width:99%;content:  attr("file", url) ;column-break-after:avoid;}
+figure:before {display:block; width:99%;content:  attr("file", url) ;break-after:avoid;}
 figure[size=col] { width:100%;margin:4pt 0 6pt 0;}
 /* figure[loc=b] {width:100%;float:prince-column-bottom-if-necessary} */
 /* figure[loc=b] {width:100%;float:prince-column-bottom} */
@@ -210,28 +208,31 @@ chapter {
   size: a5;
   font-family: 'Arial Unicode MS';
   font-size: 10pt;
+
   @footnotes {
-  content: counter(footnote,lower-alpha) ;
-  border-top: solid black thin;
-  margin-top: 8pt ;
-  text-indent:0em ;
-}
-@top-center {
-content: string(header) ' ' string(chapter, last);
-}
-@top-right {
+      content: counter(footnote,lower-alpha) ;
+      border-top: solid black thin;
+      margin-top: 8pt ;
+      text-indent:0em ;
+    }
+    @top-center {
+    content: string(header) " " string(chapter, last);
+    }
+  }
+ @top-right {
   content: counter(page);
 }
 @top-left {
   content: normal;
 }
 
-@page:first {
-  @top {
-    content: normal }
-  @top-right {
-    content: normal }
-}
+
+
+@top:first  {
+    content: normal; }
+@top-right:first  {
+    content: normal; }
+
 
 /* chapter {
   font-size: 0pt;
