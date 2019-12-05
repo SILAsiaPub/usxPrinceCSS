@@ -155,7 +155,26 @@ font-size: 90%;
 vertical-align: super;
 line-height: none ;
 margin-right:.5em;
-
+}
+note[style="x"] {
+  display: prince-footnote;
+  font-size: 70%;
+  margin-left:2em;
+  text-align: left;
+  font-weight: normal;
+  text-indent:0em;}
+note[style="x"]::footnote-call {
+content: "†";
+font-size: 90%;
+vertical-align: super;
+line-height: none ;
+}
+note[style="x"]::footnote-marker {
+content:  "† ";
+font-size: 90%;
+vertical-align: super;
+line-height: none ;
+margin-right:.5em;
 }
 
 /* chapter { counter-reset: footnote-count; }  this causes versnumbers to all be 1 */
